@@ -1,0 +1,178 @@
+body {
+    background-color: black;
+}
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+img {
+    width: 100%; /* need to overwrite inline dimensions */
+    height: 100%;
+    object-fit: cover;
+  }
+
+.clearGrey {
+    background-color: lightgray;
+}
+
+.middleGrey {
+    background-color: silver;
+}
+
+.darkGrey {
+    background-color: darkgray;
+}
+
+/************grid****************/
+
+
+.grid {
+    display:grid;
+    grid-template: repeat(9,80px)/repeat(9,150px);
+    grid-gap: 1px;
+}
+
+.grid .title {
+    grid-row:2/3;
+    grid-column:6/7;
+}
+
+.grid .clearGrey{
+    grid-row: 7/8;
+    grid-column: 3/4;
+}
+
+.grid .darkGrey {
+    grid-row: 2/3;
+    grid-column: 3/5
+}
+
+.grid .middleGrey {
+    grid-row: 6/8;
+    grid-column:6/7;
+}
+
+.grid .plage {
+    grid-row: 1/3;
+    grid-column:5/6;
+}
+
+.grid .palmier {
+    grid-row: 2/4;
+    grid-column:7/8;
+}
+
+.grid .zoom {
+    grid-row: 6/7;
+    grid-column:7/9;
+}
+
+.grid .forest {
+    grid-row: 3/5;
+    grid-column:8/9;
+}
+
+.grid .montagne {
+    grid-row: 4/6;
+    grid-column:1/2;
+}
+
+.grid .snow {
+    grid-row: 4/6;
+    grid-column:6/8;
+}
+
+.grid .canyon {
+    grid-row: 5/6;
+    grid-column:8/10;
+}
+
+.grid .bigCanyon {
+    grid-row: 3/7;
+    grid-column:2/6;
+}
+
+.grid .seaFlowers {
+    grid-row: 7/9;
+    grid-column:4/6;
+}
+
+.grid .brume {
+    grid-row: 7/9;
+    grid-column:7/8;
+}
+
+.grid .prairie {
+    grid-row: 8/10;
+    grid-column:6/7;
+}
+
+
+.grid .date {
+    grid-row :7/8;
+    grid-column : 8/10;
+}
+
+h1, .date {
+    color : white;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+.date  {
+    font-size: 1.5em;
+}
+
+
+
+/***********************MeDIA queries********************************/
+
+@media screen and (max-width: 500px) {
+    .grid {
+        display:grid;
+        grid-template: repeat(4,1fr)/repeat(7,1fr);
+        grid-gap: 1px;
+    }
+
+    .container .grid * {
+        grid-area: auto;
+    }
+
+    .grid .title {
+        grid-row:3/4;
+        grid-column: 1/4;
+    }
+
+    .grid .date {
+        grid-row:4/5;
+        grid-column:1/5;
+    }
+}
+
+
+@media screen and (min-width: 500px) and (max-width:1000px) {
+    .grid {
+        display:grid;
+        grid-template: repeat(3,1fr)/repeat(7,1fr);
+        grid-gap: 1px;
+    }
+
+    .container .grid * {
+        grid-area: auto;
+    }
+
+    .grid .title {
+        grid-row:3/4;
+        grid-column: 1/4;
+    }
+
+    .grid .date {
+        grid-row:3/4;
+        grid-column:5/8;
+        font-size: 1em;
+    }
+}
